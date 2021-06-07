@@ -7,13 +7,14 @@ const forecast = require('../../weather-app/utils/forecast');
 const app = express();
 
 
-console.log(__dirname);
+//console.log(__dirname);
+
 //define paths for express config
 const staticContentPath = path.join(__dirname,'template');
 const viewsPath = path.join(__dirname,'../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
 
-console.log(partialsPath);
+//console.log(partialsPath);
 //configure handlebars engine and views location
 app.set('view engine','hbs');
 app.set('views',viewsPath);
