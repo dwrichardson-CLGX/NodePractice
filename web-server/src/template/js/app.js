@@ -1,13 +1,33 @@
 console.log('RANDOM LOGGING GOES HERE')
-fetch('http://puzzle.mead.io/puzzle').then((response) => {
-  response.json().then((data) => {
-      console.log(data);
-  })
-});
 
 
 const weatherForm = document.querySelector('form');
-weatherForm.addEventListener('submit', () => {
-    console.log(testing);
+const searchField = document.querySelector('#ctrlAddress');
+const responseField = document.querySelector('#response');
+const errorField = document.querySelector('#error');
+
+weatherForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const address = searchField.value;
+   // alert(address);
+
+    if(address) {
+        fetch(`http://localhost:3000/weather?address=${address}`).then((response) => {
+            response.json().then((data) => {
+                if(data.error)
+                {
+                    errorField.textContent = data.error;
+
+                }
+                else {
+                    responseField.textContent = data.forecast;
+                    responseField.textContent += data.location;
+
+                }
+            })
+        });
+    }
+    console.log(address);
+    console.log('testing');
 })
 

@@ -53,6 +53,7 @@ app.get('/help/*', (req,res) => {
 app.get('/weather', (req,res) =>{
 
     const address = req.query.address;
+
    if(!req.query.address){
        return res.send({error: 'You must provide an address'})
    }
@@ -67,8 +68,8 @@ app.get('/weather', (req,res) =>{
 
             const {center} = data.features[0];
 
-            console.log(`Longitude: ${center[0]}`);
-            console.log(`Latitude:  ${center[1]}`);
+          //  console.log(`Longitude: ${center[0]}`);
+          //  console.log(`Latitude:  ${center[1]}`);
 
             forecast(center[1], center[0], (error, forecastData) =>{
                 if(error) {

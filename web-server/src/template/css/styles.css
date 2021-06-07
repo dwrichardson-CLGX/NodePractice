@@ -37,3 +37,19 @@ footer {
     background-color: deepskyblue;
     text-align: center;
 }
+
+button {
+    box-shadow: 2px 2px 2px gray;
+    border-radius: 8px;
+    font-family: Georgia, serif;
+
+}
+
+.successResult{
+    height: 8rem;
+    background-color: honeydew;
+}
+
+.errorResult {
+    background-color: crimson;
+}
