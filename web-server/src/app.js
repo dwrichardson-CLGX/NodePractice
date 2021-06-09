@@ -7,9 +7,6 @@ const forecast = require('../../weather-app/utils/forecast');
 const app = express();
 
 const port = process.env.PORT || 3000;
-
-//console.log(__dirname);
-
 //define paths for express config
 const staticContentPath = path.join(__dirname,'template');
 const viewsPath = path.join(__dirname,'../templates/views');
